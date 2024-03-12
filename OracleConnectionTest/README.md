@@ -109,10 +109,15 @@ The connection string to connect to an Oracle Database is composed by the follow
 
 
 #### 3 How can I get Db Version?
+See [here](./Services/OracleVersionQueryExecutor.cs)
 
 #### 4 How do we sample queries? Are there caches / statistics mantained by the db engine?
+See [here](./Services/OracleTopQueriesQueryExecutor.cs)
+Information about the V$SQLAREA can be found [here](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/refrn/V-SQLAREA.html#GUID-09D5169F-EE9E-4297-8E01-8D191D87BDF7)
 
 #### 5 How do we sample Query Plan?
+See [here](./Services/OracleQueryPlanQueryExecutor.cs)
+Information about V$SQL_PLAN can be found [here](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/refrn/V-SQL_PLAN.html#GUID-3E3A3A3A-3A3A-3A3A-3A3A-3A3A3A3A3A3A)
 
 #### 6 How do we sample Request Frequency?
 

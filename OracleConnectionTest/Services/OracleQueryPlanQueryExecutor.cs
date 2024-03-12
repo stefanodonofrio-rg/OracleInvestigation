@@ -2,11 +2,13 @@ using Oracle.ManagedDataAccess.Client;
 
 namespace OracleConnectionTest.Services;
 
-public class OracleVersionQueryExecutor : IQueryExecutor
+public class OracleQueryPlanQueryExecutor :IQueryExecutor
 {
     public void Execute()
     {
-        var commandText = "SELECT PRODUCT, VERSION, VERSION_FULL, STATUS FROM PRODUCT_COMPONENT_VERSION";
+        var commandText =
+            "SELECT ADDRESS, HASH_VALUE, OPERATION FROM (SELECT * FROM V$SQL_PLAN) where ROWNUM <10";
+        
         Console.WriteLine("Executing the following query:");
         Console.WriteLine(commandText);
         Console.WriteLine("...");
@@ -19,10 +21,10 @@ public class OracleVersionQueryExecutor : IQueryExecutor
         var reader = cmd.ExecuteReader();
         while (reader.Read())
         {
-            Console.Write(reader["PRODUCT"]+ " ");
-            Console.Write(reader["VERSION"]+ " ");
-            Console.Write(reader["VERSION_FULL"]+ " ");
-            Console.WriteLine(reader["STATUS"]);
-        }
+            Console.Write(BitConverter.ToString(reader["ADDRESS"] as byte[]).Replace("-","")+ " "));
+            Console.Write(reader["HASH_VALUE"]+ " ");
+            Console.WriteLine(reader["OPERATION"]);
+            Console.WriteLine();
+        }    
     }
 }

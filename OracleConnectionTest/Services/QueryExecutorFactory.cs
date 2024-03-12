@@ -7,6 +7,8 @@ public static class QueryExecutorFactory
         return choice switch
         {
             1 => new OracleVersionQueryExecutor(),
+            2 => new OracleTopQueriesQueryExecutor(),
+            3 => new OracleQueryPlanQueryExecutor(),
             _ => throw new NotImplementedException()
         };
     }
