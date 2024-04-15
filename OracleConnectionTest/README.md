@@ -122,6 +122,7 @@ Information about V$SQL_PLAN can be found [here](https://docs.oracle.com/en/data
 #### 6 How do we sample Request Frequency?
 
 #### 7 How do we sample Throughput?
+Information about V$SYSMETRIC can be found [here](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/refrn/V-SYSMETRIC.html#GUID-3E3A3A3A-3A3A-3A3A-3A3A-3A3A3A3A3A3A)
 
 #### 8 How do we sample Number of Connections?
 

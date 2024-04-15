@@ -21,7 +21,7 @@ public class OracleQueryPlanQueryExecutor :IQueryExecutor
         var reader = cmd.ExecuteReader();
         while (reader.Read())
         {
-            Console.Write(BitConverter.ToString(reader["ADDRESS"] as byte[]).Replace("-","")+ " "));
+            Console.Write(BitConverter.ToString(reader["ADDRESS"] as byte[]).Replace("-","")+ " ");
             Console.Write(reader["HASH_VALUE"]+ " ");
             Console.WriteLine(reader["OPERATION"]);
             Console.WriteLine();

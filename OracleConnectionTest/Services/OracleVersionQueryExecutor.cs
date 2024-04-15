@@ -6,11 +6,7 @@ public class OracleVersionQueryExecutor : IQueryExecutor
 {
     public void Execute()
     {
-        var commandText = "SELECT PRODUCT, VERSION, VERSION_FULL, STATUS FROM PRODUCT_COMPONENT_VERSION";
-        Console.WriteLine("Executing the following query:");
-        Console.WriteLine(commandText);
-        Console.WriteLine("...");
-        Console.WriteLine("The result is:");
+        var commandText = "select con_id, name, open_mode, total_size from v$pdbs";
         using var con = new OracleConnection(OracleParameters.ConnectionString);
         con.Open();
         var cmd = con.CreateCommand();
